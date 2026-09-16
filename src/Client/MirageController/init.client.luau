@@ -2,6 +2,7 @@ const CollectionService = game:GetService("CollectionService")
 
 const Constants = require(script.Constants)
 const Mirage = require(script.Mirage)
+
 const MirageController = {}
 const mt = {}
 mt.__index = mt
