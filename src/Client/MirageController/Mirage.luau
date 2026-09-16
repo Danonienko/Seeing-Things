@@ -7,7 +7,7 @@ const Mirage = {}
 const mt = {}
 mt.__index = mt
 
-local function _onUpdate(self: Mirage, deltaTime: number): ()
+local function _onUpdate(self: Mirage): ()
 	const character = Players.LocalPlayer.Character
 	if not character or not character.PrimaryPart then
 		return
@@ -47,8 +47,8 @@ function Mirage.new(model: Model)
 	self.PrimaryPart = _getPrimaryPart(model)
 	self.Descendants = model:GetDescendants()
 
-	RunService:BindToRenderStep("Mirage", Enum.RenderPriority.Character.Value, function(delta: number)
-		_onUpdate(self, delta)
+	RunService:BindToRenderStep("Mirage", Enum.RenderPriority.Character.Value, function()
+		_onUpdate(self)
 	end)
 
 	return self
