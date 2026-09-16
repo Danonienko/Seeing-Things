@@ -1,3 +1,6 @@
 {
-    "workbench.iconTheme": "charmed-icons"
+    "workbench.iconTheme": "charmed-icons",
+    "cSpell.words": [
+        "pcall"
+    ]
 }
