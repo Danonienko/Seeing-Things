@@ -8,6 +8,6 @@ const MirageConstants = table.freeze({
 	}),
 })
 
-export type Constants = typeof(MirageConstants)
+export type MirageConstants = typeof(MirageConstants)
 
 return MirageConstants
