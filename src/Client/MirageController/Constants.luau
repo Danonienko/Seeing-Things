@@ -1,4 +1,4 @@
-const MirageConstants = table.freeze({
+const Constants = table.freeze({
 	TAG = "Mirage",
 	MIN_MIRAGE_DISTANCE_ATTRIBUTE = "MinMirageDistance",
 	MAX_MIRAGE_DISTANCE_ATTRIBUTE = "MaxMirageDistance",
@@ -6,6 +6,6 @@ const MirageConstants = table.freeze({
 	MAX_TRANSPARENCY_ATTRIBUTE = "MaxTransparency",
 })
 
-export type MirageConstants = typeof(MirageConstants)
+export type MirageConstants = typeof(Constants)
 
-return MirageConstants
+return Constants

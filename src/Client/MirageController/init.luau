@@ -1,7 +1,7 @@
 const CollectionService = game:GetService("CollectionService")
 
+const Constants = require(script.Constants)
 const Mirage = require(script.Mirage)
-const MirageConstants = require(script.MirageConstants)
 
 const MirageController = {}
 const mt = {}
@@ -54,19 +54,23 @@ function MirageController.new()
 		Mirages = {},
 	}
 
-	for _, instance in CollectionService:GetTagged(MirageConstants.TAG) do
+	for _, instance in CollectionService:GetTagged(Constants.TAG) do
 		_handleInstanceAdded(self, instance)
 	end
 
-	CollectionService:GetInstanceAddedSignal(MirageConstants.TAG):Connect(function(instance)
+	CollectionService:GetInstanceAddedSignal(Constants.TAG):Connect(function(instance)
 		_handleInstanceAdded(self, instance)
 	end)
 
-	CollectionService:GetInstanceRemovedSignal(MirageConstants.TAG):Connect(function(instance)
+	CollectionService:GetInstanceRemovedSignal(Constants.TAG):Connect(function(instance)
 		_handleInstanceRemoved(self, instance)
 	end)
 
 	return self
+end
+
+function mt.GetMirageByModel(self: MirageController, model: Model): Mirage.Mirage?
+	return private[self].Mirages[model]
 end
 
 type MirageController = typeof(MirageController.new(...))
