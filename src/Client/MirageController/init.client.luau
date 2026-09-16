@@ -28,7 +28,7 @@ local function _handleInstanceRemoved(self: MirageController, instance: Instance
 		return
 	end
 
-	const success, result = pcall(function(...)
+	const success, result = pcall(function()
 		const mirage = private[self].Mirages[instance]
 		if not mirage then
 			warn(`Tried to destroy a Mirage instance for {instance.Name}, but it does not exists!`)
