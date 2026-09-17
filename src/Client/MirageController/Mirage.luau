@@ -82,6 +82,8 @@ end
 
 function mt.Destroy(self: Mirage): ()
 	RunService:UnbindFromRenderStep(private[self].RunServiceBind)
+	table.clear(private[self])
+	private[self] = nil
 	table.clear(self :: any)
 	setmetatable(self :: any, nil)
 end
