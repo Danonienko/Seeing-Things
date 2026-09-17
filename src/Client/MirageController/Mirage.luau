@@ -2,7 +2,7 @@ const HttpService = game:GetService("HttpService")
 const Players = game:GetService("Players")
 const RunService = game:GetService("RunService")
 
-const Constants = require(script.Parent.Constants)
+const MirageConstants = require(script.Parent.MirageConstants)
 
 const Mirage = {}
 const mt = {}
@@ -61,22 +61,22 @@ function Mirage.new(model: Model)
 end
 
 function mt.GetMinMirageDistance(self: Mirage): number
-	const attribute = private[self].Model:GetAttribute(Constants.MIN_MIRAGE_DISTANCE_ATTRIBUTE)
+	const attribute = private[self].Model:GetAttribute(MirageConstants.MIN_MIRAGE_DISTANCE_ATTRIBUTE)
 	return typeof(attribute) == "number" and attribute or 0
 end
 
 function mt.GetMaxMirageDistance(self: Mirage): number
-	const attribute = private[self].Model:GetAttribute(Constants.MAX_MIRAGE_DISTANCE_ATTRIBUTE)
+	const attribute = private[self].Model:GetAttribute(MirageConstants.MAX_MIRAGE_DISTANCE_ATTRIBUTE)
 	return typeof(attribute) == "number" and attribute or 100
 end
 
 function mt.GetMinTransparency(self: Mirage): number
-	const attribute = private[self].Model:GetAttribute(Constants.MIN_TRANSPARENCY_ATTRIBUTE)
+	const attribute = private[self].Model:GetAttribute(MirageConstants.MIN_TRANSPARENCY_ATTRIBUTE)
 	return typeof(attribute) == "number" and attribute or 0
 end
 
 function mt.GetMaxTransparency(self: Mirage): number
-	const attribute = private[self].Model:GetAttribute(Constants.MAX_TRANSPARENCY_ATTRIBUTE)
+	const attribute = private[self].Model:GetAttribute(MirageConstants.MAX_TRANSPARENCY_ATTRIBUTE)
 	return typeof(attribute) == "number" and attribute or 1
 end
 
